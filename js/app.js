@@ -25,19 +25,20 @@ const createNewTaskElement = function (taskString) {
   const deleteButtonImg = document.createElement("img");
 
   label.innerText = taskString;
-  label.className = "task";
+  label.className = "task__label";
 
   checkBox.type = "checkbox";
   editInput.type = "text";
-  editInput.className = "task";
+  editInput.className = "task__input";
 
   editButton.innerText = "Edit";
-  editButton.className = "edit";
+  editButton.className = "task__edit";
 
-  deleteButton.className = "delete";
+  deleteButton.className = "task__delete";
   deleteButtonImg.src = "./img/remove.svg";
   deleteButton.appendChild(deleteButtonImg);
 
+  listItem.classList.add("task");
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
   listItem.appendChild(editInput);
@@ -59,9 +60,9 @@ const addTask = function () {
 
 const editTask = function () {
   const listItem = this.parentNode;
-  const editInput = listItem.querySelector("input[type=text]");
-  const label = listItem.querySelector("label");
-  const editBtn = listItem.querySelector(".edit");
+  const editInput = listItem.querySelector(".task__input");
+  const label = listItem.querySelector(".task__label");
+  const editBtn = listItem.querySelector(".task__edit");
   const containsClass = listItem.classList.contains("editMode");
 
   if (containsClass) {
@@ -105,8 +106,8 @@ addButton.addEventListener("click", ajaxRequest);
 
 const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   const checkBox = taskListItem.querySelector("input[type=checkbox]");
-  const editButton = taskListItem.querySelector("button.edit");
-  const deleteButton = taskListItem.querySelector("button.delete");
+  const editButton = taskListItem.querySelector(".task__edit");
+  const deleteButton = taskListItem.querySelector(".task__delete");
 
   editButton.addEventListener("click", editTask);
   deleteButton.addEventListener("click", deleteTask);
