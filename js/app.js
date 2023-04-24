@@ -11,7 +11,6 @@
 const taskInput = document.getElementById("new-task");//Add a new task.
 const addButton = document.getElementsByTagName("button")[0]; //first button
 const incompleteTaskHolder = document.querySelector(".todo__incomplete"); //ul of #incompleteTasks
-console.log(incompleteTaskHolder)
 const completedTasksHolder = document.querySelector(".completed__list"); //completed-tasks
 
 //New task list item
