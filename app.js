@@ -13,7 +13,6 @@ const addButton = document.getElementsByTagName("button")[0]; //first button
 const incompleteTaskHolder = document.querySelector(".todo__incomplete"); //ul of #incompleteTasks
 const completedTasksHolder = document.querySelector(".completed__list"); //completed-tasks
 
-
 //New task list item
 const createNewTaskElement = function (taskString) {
   const listItem = document.createElement("li");
@@ -26,7 +25,7 @@ const createNewTaskElement = function (taskString) {
   const deleteButtonImg = document.createElement("img");
 
   label.innerText = taskString;
-  label.className = 'task';
+  label.className = "task";
 
   checkBox.type = "checkbox";
   editInput.type = "text";
@@ -36,7 +35,7 @@ const createNewTaskElement = function (taskString) {
   editButton.className = "edit";
 
   deleteButton.className = "delete";
-  deleteButtonImg.src = './remove.svg';
+  deleteButtonImg.src = "./remove.svg";
   deleteButton.appendChild(deleteButtonImg);
 
   listItem.appendChild(checkBox);
@@ -60,7 +59,7 @@ const addTask = function () {
 
 const editTask = function () {
   const listItem = this.parentNode;
-  const editInput = listItem.querySelector('input[type=text]');
+  const editInput = listItem.querySelector("input[type=text]");
   const label = listItem.querySelector("label");
   const editBtn = listItem.querySelector(".edit");
   const containsClass = listItem.classList.contains("editMode");
